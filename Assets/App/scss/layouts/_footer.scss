@@ -1,0 +1,109 @@
+.footer {
+    background-color: $gray-13;
+    a,p,span{
+        color: $white;
+        line-height: 1.4;
+    }
+    a{
+        -webkit-transition: all .25s;
+        -o-transition: all .25s;
+        transition: all .25s;
+        &:hover,
+        &:focus{
+            opacity: .8;
+        }
+    }
+    .footer-group{
+        margin-bottom: 40px;
+        .footer-widget{
+            .footer-widget-title{
+                font-size: 18px;
+                font-weight: 500;
+                color: $white;
+                margin-bottom: 20px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                        justify-content: space-between;
+                i{
+                    display: none;
+                    @include maxWidth(992px){
+                        display: block;
+                    }
+                }
+                &.footer-title-toggle{
+                    cursor: pointer;
+                    &.is-active{
+                        i{
+                            -webkit-transform: rotate(180deg);
+                                -ms-transform: rotate(180deg);
+                                    transform: rotate(180deg);
+                        }
+                    }
+                    @include maxWidth(992px){
+                        & ~ ul{
+                            display: none;
+                        }
+                    }
+
+                }
+            }
+            & > ul{
+                & > li{
+                    & > a{
+                        display: block;
+                        margin-bottom: 18px;
+                    }
+                }
+            }
+            & + .footer-widget{
+                padding-top: 12px;
+            }
+        }
+    }
+    .footer-section-title{
+        margin-bottom: 30px;
+        .footer-section-main{
+            font-size: 24px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .footer-section-des{
+            margin-bottom: 0;
+        }
+    }
+    .footer-top{
+        padding: 40px 0 4px 0;
+        border-bottom: 1px solid #e1e1e1;
+    }
+    .footer-middle{
+        padding: 22px 0 8px 0;
+        border-bottom: 1px solid #e1e1e1;
+    }
+    .footer-bottom{
+        padding: 28px 0 36px 0;
+        .footer-company-name{
+            text-transform: uppercase;
+        }
+        .footer-company-add{
+
+        }
+        .footer-company-tel{
+
+        }
+        .btc-sign{
+            padding-top: 12px;;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+        }
+    }
+}
