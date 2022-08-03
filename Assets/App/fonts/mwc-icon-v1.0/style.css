@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'mwc-icon';
-  src:  url('fonts/mwc-icon.eot?qhbwci');
-  src:  url('fonts/mwc-icon.eot?qhbwci#iefix') format('embedded-opentype'),
-    url('fonts/mwc-icon.ttf?qhbwci') format('truetype'),
-    url('fonts/mwc-icon.woff?qhbwci') format('woff'),
-    url('fonts/mwc-icon.svg?qhbwci#mwc-icon') format('svg');
+  src:  url('fonts/mwc-icon.eot?gbvnpn');
+  src:  url('fonts/mwc-icon.eot?gbvnpn#iefix') format('embedded-opentype'),
+    url('fonts/mwc-icon.ttf?gbvnpn') format('truetype'),
+    url('fonts/mwc-icon.woff?gbvnpn') format('woff'),
+    url('fonts/mwc-icon.svg?gbvnpn#mwc-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.mwc-icon-shopee-edit:before {
+  content: "\e912";
+}
+.mwc-icon-shopee-chat:before {
+  content: "\e911";
+}
+.mwc-icon-shopee-mall:before {
+  content: "\e92d";
+}
+.mwc-icon-shopee-minus:before {
+  content: "\e92e";
+}
+.mwc-icon-shopee-plus:before {
+  content: "\e92f";
+}
+.mwc-icon-shopee-quad:before {
+  content: "\e930";
+}
+.mwc-icon-shopee-question:before {
+  content: "\e932";
+}
+.mwc-icon-shopee-shop-chat:before {
+  content: "\e933";
+}
+.mwc-icon-shopee-store:before {
+  content: "\e934";
+}
+.mwc-icon-show-more-local:before {
+  content: "\e910";
+}
 .mwc-icon-mwc-local:before {
   content: "\e90f";
 }

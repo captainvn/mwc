@@ -72,13 +72,13 @@
         z-index: 3;
         .product-grid-sale-tag-inner{
             background-color: #f00;
-            font-size: 20px;
+            font-size: 16px;
             text-transform: uppercase;
             color: $white;
             padding: 12px 8px 10px 8px;
             text-align: center;
             line-height: 1;
-            width: 73px;
+            width: 59px;
             &.product-grid-sale-tag-small{
                 font-size: 16px;
                 width: 59px;
@@ -106,7 +106,7 @@
                 position: absolute;
                 border-color: transparent #f00;
                 border-style: solid;
-                border-width: 0 37px 10px;
+                border-width: 0 30px 10px;
                 @include maxWidth(767px){
                     border-width: 0 28px 10px;
                 }

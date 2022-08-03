@@ -5,8 +5,6 @@ const testimonialSlider = function () {
         jQuery(document).find(".header-bar-menu > ul").owlCarousel(testimonialConfig);
     }
 }
-
-
 const checkFooterLocal = function () {
     jQuery(document).find('.footer-title-toggle').removeClass('is-active');
     if (jQuery(window).width() > 992) {
@@ -15,6 +13,49 @@ const checkFooterLocal = function () {
         jQuery(document).find(".footer-title-toggle").next('ul').hide()
     }
 }
+
+function checkBox() {
+    var headerCheckbox = jQuery('.cart-list-header .cart-list-header-check-all .stardust-checkbox');
+    var shopCheckbox = jQuery('.cart-list .cart-item-outer .cart-item-header-checkbox .stardust-checkbox');
+    var productCheckbox = jQuery('.cart-list .cart-item-outer .cart-item-body-item-checkbox .stardust-checkbox');
+    var footerCheckbox = jQuery('.cart-final--bottom-checkbox .stardust-checkbox');
+
+    jQuery(document).on('change', '.stardust-checkbox__input', function (e) {
+        e.preventDefault();
+        if(jQuery(this).is(':checked')){
+            jQuery(this).closest('.stardust-checkbox').addClass('stardust-checkbox--checked');
+        }else{
+            jQuery(this).closest('.stardust-checkbox').removeClass('stardust-checkbox--checked');
+        }
+    });
+    jQuery(document).on('change', '.cart-list-header .cart-list-header-check-all .stardust-checkbox__input, .cart-final--bottom-checkbox .stardust-checkbox__input', function (e) {
+        e.preventDefault();
+        if(jQuery(this).is(':checked')){
+            shopCheckbox.addClass('stardust-checkbox--checked');
+            productCheckbox.addClass('stardust-checkbox--checked');
+            headerCheckbox.addClass('stardust-checkbox--checked');
+            footerCheckbox.addClass('stardust-checkbox--checked');
+        }else{
+            shopCheckbox.removeClass('stardust-checkbox--checked');
+            productCheckbox.removeClass('stardust-checkbox--checked');
+            headerCheckbox.removeClass('stardust-checkbox--checked');
+            footerCheckbox.removeClass('stardust-checkbox--checked');
+        }
+    });
+
+    jQuery(document).on('change', '.cart-list .cart-item-outer .cart-item-header-checkbox .stardust-checkbox__input', function (e) {
+        e.preventDefault();
+        var thisShopCheckbox = jQuery(this).parents('.cart-item-outer').find('.cart-item-body .cart-item-body-item-checkbox .stardust-checkbox');
+        if(jQuery(this).is(':checked')){
+            thisShopCheckbox.addClass('stardust-checkbox--checked');
+        }else{
+            thisShopCheckbox.removeClass('stardust-checkbox--checked');
+        }
+    });
+
+}
+
+
 
 let Main = {
     init: function () {
@@ -120,11 +161,49 @@ let Main = {
             jQuery('.sidebar-overlay-filter').toggleClass('is-active');
             jQuery('.filter-sidebar').toggleClass('is-active');
         });
+        jQuery(document).on('click', '.cart-item-body-item-product-options-btn', function (e) {
+            e.preventDefault();
+            jQuery(this).next().toggleClass('cart-item--options-modal--active');
+        });
+        jQuery(document).on('click', '.cart-item--options-modal--actions button', function (e) {
+            e.preventDefault();
+            jQuery(this).parents('.cart-item--options-modal').removeClass('cart-item--options-modal--active');
+        });
+        jQuery(document).on('click', '.cart-item--quanity-actions--item', function (e) {
+            e.preventDefault();
+            var input = jQuery(this).parent().find('.cart-item--quanity-actions--input');
+            var value = Number(input.val());
+            if(jQuery(this).hasClass('cart-item--quanity-actions--item-minus')){
+                value = value < 2 ? 1 : value - 1;
+                input.val(value);
+            }
+            if(jQuery(this).hasClass('cart-item--quanity-actions--item-plus')){
+                value = value + 1;
+                input.val(value);
+            }
+        });
+        jQuery(document).on('click', '.cart-item--find-more--related', function (e) {
+            e.preventDefault();
+            // jQuery(this).parent().toggleClass('cart-item--find-more-priority');
+            jQuery(this).toggleClass('cart-item--find-more--related-active');
+            jQuery(this).parent().find('.cart-item--find-more--dropdown').toggleClass('cart-item--find-more--dropdown--active');
+        });
+        jQuery(document).on('click', '.cart-item-outer .cart-item--shipping .shopee-drawer', function (e) {
+            e.preventDefault();
+            jQuery(this).toggleClass('shopee-drawer--active');
+        });
+        jQuery(document).on('click', '.cart-final--bottom .stardust-popover', function (e) {
+            e.preventDefault();
+            jQuery(this).toggleClass('stardust-popover--active');
+        });
+
+
     },
 };
 
 jQuery(document).ready(function () {
     Main.init();
+    checkBox();
 });
 jQuery(window).resize(function () {
     if (jQuery(window).width() > 992) {
@@ -133,6 +212,5 @@ jQuery(window).resize(function () {
         jQuery(document).find(".header-bar-menu").find('ul').css('display', 'none');
     }
     jQuery(document).find(".js-hamburger").removeClass('is-active');
-
     checkFooterLocal()
 });
