@@ -163,7 +163,12 @@ let Main = {
         });
         jQuery(document).on('click', '.cart-item-body-item-product-options-btn', function (e) {
             e.preventDefault();
+            var optionsTop = jQuery(this).parents('.cart-item-body-item-product-options').offset().top;
+            var optionsHeight = jQuery(this).parents('.cart-item-body-item-product-options').outerHeight();
+            var parentTop = jQuery(this).parents('.cart-item-body-item').offset().top;
+            var modalTop = optionsTop - parentTop;
             jQuery(this).next().toggleClass('cart-item--options-modal--active');
+            jQuery(this).next().css('top', modalTop + optionsHeight);
         });
         jQuery(document).on('click', '.cart-item--options-modal--actions button', function (e) {
             e.preventDefault();
