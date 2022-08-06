@@ -210,9 +210,12 @@ li {
         }
     }
 	.input-item {
-		width: 100%;
-		display: block;
-		padding: 8px 42px 8px 10px;
+        width: 100%;
+        display: block;
+        padding: 8px 36px 8px 10px;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
 	}
 	i {
 		position: absolute;
@@ -232,7 +235,7 @@ li {
 		-webkit-box-align: center;
 		-ms-flex-align: center;
 		align-items: center;
-		font-size: 24px;
+		font-size: 20px;
         pointer-events: none;
         &.mwc-icon-mwc-search{
             font-size: 16px;

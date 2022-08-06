@@ -1,0 +1,284 @@
+.account-coins-header {
+    border-radius: 0.125rem;
+    overflow: hidden;
+    overflow: visible;
+    padding: 1rem 1.25rem;
+    background-color: #fff;
+    margin-bottom: 0.75rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #f6a700;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+.account-coins-header-svg {
+    width: 48px;
+    height: 48px;
+    margin-right: 14px;
+    svg{
+        width: 100%;
+        height: 100%;
+    }
+}
+.account-coins-current {
+    font-size: 2rem;
+    margin-right: 0.625rem;
+}
+.account-coins-header-link {
+    text-decoration: none;
+    color: rgba(0,0,0,.87);
+    font-size: 1rem;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    color: inherit;
+    &:hover,
+    &:focus{
+        color: #f6a700;
+    }
+}
+.account-coins-header-link-svg {
+    margin-left: 9px;
+    width: 10px;
+    height: 10px;
+}
+.account-coins-header-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.account-coins-header-title-current {
+    font-size: 1rem;
+}
+.account-coins-header-title-current-help {
+    font-size: .75rem;
+    color: rgba(0,0,0,.54);
+    padding-left: 1.1875rem;
+}
+.account-coins-header-title-sub {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: .875rem;
+    font-weight: 300;
+}
+.account-coins-header-title-sub>a {
+    color: #929292;
+    text-decoration: none;
+}
+.account-coins-header-title-sub-svg {
+    color: rgba(0,0,0,.54);
+    font-size: .6875rem;
+    margin-left: 7px;
+}
+
+.custom-tab-nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+    overflow: auto;
+}
+.custom-tab-nav {
+    border-radius: 0.125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #fff;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    margin-bottom: 0.75rem;
+}
+
+.custom-tab-nav-item {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    padding: 1rem 16px;
+    text-align: center;
+    color: rgba(0,0,0,.8);
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    &:hover,
+    &:focus{
+        color: rgba(0,0,0,.8);
+    }
+}
+.custom-tab-nav-item--active {
+    border-bottom: 2px solid #ee4d2d;
+}
+.custom-tab-nav-item--active {
+    color: #ee4d2d;
+    &:hover,
+    &:focus{
+        color: #ee4d2d;
+    }
+}
+.custom-tab-content-item{
+    display: none;
+    &.custom-tab-content-item--active{
+        display: block;
+    }
+}
+
+.account-coins-tab{
+    .custom-tab-content-item{
+        border-radius: 0.125rem;
+        -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+                box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+        overflow: hidden;
+    }
+}
+
+
+.account-coin-item {
+    -webkit-box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+            box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+    border-radius: 0.125rem;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 12px 12px 8px;
+    clear: both;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,.09);
+    text-decoration: none;
+    .account-coin-item-thumb {
+        float: left;
+        min-width: 5rem;
+        height: 5rem;
+        border: 1px solid #f5f5f5;
+        -ms-flex-preferred-size: 5rem;
+            flex-basis: 5rem;
+        background-size: cover;
+    }
+}
+.account-coin-item-info {
+    padding: 0 0.625rem;
+    width: 6.25rem;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    &>p {
+        word-break: break-all;
+        font-size: .875rem;
+        color: rgba(0,0,0,.54);
+        margin: 0 0 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        &>p:first-child {
+            font-size: 1rem;
+            color: rgba(0,0,0,.8);
+        }
+        &>p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.account-coin-item-total-products {
+    color: #714c15;
+    text-transform: capitalize;
+}
+.account-coin-item-amount {
+    text-align: right;
+    min-width: 5rem;
+    float: right;
+    color: rgba(0,0,0,.87);
+    font-size: 1.25rem;
+    padding: 0.625rem;
+}
+.account-coin-item-amount-received {
+    color: #f6a700;
+}
+@include maxWidth(992px){
+    .account-coins-header{
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+        grid-template-areas: "svg total info"
+                             "empty empty link";
+    }
+    .account-coins-header-link{
+        grid-area: link;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+}
+
+@include maxWidth(768px){
+    .account-coin-item .account-coin-item-thumb {
+        min-width: 50px;
+        height: 50px;
+        -ms-flex-preferred-size: 50px;
+        flex-basis: 50px;
+    }
+    .account-coin-item-amount{
+        font-size: 18px;
+    }
+}
+@include maxWidth(480px){
+    .account-coin-item .account-coin-item-thumb {
+        min-width: 50px;
+        height: 50px;
+        -ms-flex-preferred-size: 50px;
+        flex-basis: 50px;
+    }
+
+    .account-coin-item{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: "svg info"
+                             "empty coin";
+    }
+    .account-coin-item-amount{
+        font-size: 18px;
+        grid-area: coin;
+        text-align: left;
+    }
+    .account-coin-item-info{
+        width: 100%;
+        min-width: 1px;
+    }
+}
+@include maxWidth(375px){
+    .account-coins-tab{
+        .custom-tab-nav{
+
+        }
+    }
+}

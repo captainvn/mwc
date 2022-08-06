@@ -174,15 +174,15 @@ let Main = {
             e.preventDefault();
             jQuery(this).parents('.cart-item--options-modal').removeClass('cart-item--options-modal--active');
         });
-        jQuery(document).on('click', '.cart-item--quanity-actions--item', function (e) {
+        jQuery(document).on('click', '.cart-item--quantity-actions--item', function (e) {
             e.preventDefault();
-            var input = jQuery(this).parent().find('.cart-item--quanity-actions--input');
+            var input = jQuery(this).parent().find('.cart-item--quantity-actions--input');
             var value = Number(input.val());
-            if(jQuery(this).hasClass('cart-item--quanity-actions--item-minus')){
+            if(jQuery(this).hasClass('cart-item--quantity-actions--item-minus')){
                 value = value < 2 ? 1 : value - 1;
                 input.val(value);
             }
-            if(jQuery(this).hasClass('cart-item--quanity-actions--item-plus')){
+            if(jQuery(this).hasClass('cart-item--quantity-actions--item-plus')){
                 value = value + 1;
                 input.val(value);
             }
@@ -200,6 +200,46 @@ let Main = {
         jQuery(document).on('click', '.cart-final--bottom .stardust-popover', function (e) {
             e.preventDefault();
             jQuery(this).toggleClass('stardust-popover--active');
+        });
+        jQuery(document).on('click', '.stardust-radio', function (e) {
+            e.preventDefault();
+            var value = jQuery(this).attr('data-value');
+            var input = jQuery(this).parents('.stardust-radio-group').attr('data-trigger-value');
+            jQuery(input).attr('data-value', value);
+            jQuery(input).val(value);
+            jQuery(this).parent('.stardust-radio-group').find('.stardust-radio').removeClass('stardust-radio--checked');
+            jQuery(this).parent('.stardust-radio-group').find('.stardust-radio-button').removeClass('stardust-radio-button--checked');
+            jQuery(this).addClass('stardust-radio--checked');
+            jQuery(this).find('.stardust-radio-button').addClass('stardust-radio-button--checked');
+        });
+        jQuery(document).on('click', '[data-btn-file-trigger]', function (e) {
+            e.preventDefault();
+            var target = jQuery(this).attr('data-btn-file-trigger');
+            jQuery(target).trigger('click');
+
+        });
+        jQuery(document).on('click', '.custom-tab-nav-item', function (e) {
+            e.preventDefault();
+            var target = jQuery(this).attr('data-target');
+            jQuery(this).parent('.custom-tab-nav').find('.custom-tab-nav-item').removeClass('custom-tab-nav-item--active')
+            jQuery(this).addClass('custom-tab-nav-item--active')
+            jQuery(target).parent('.custom-tab-contents').find('.custom-tab-content-item').removeClass('custom-tab-content-item--active')
+            jQuery(target).addClass('custom-tab-content-item--active');
+
+        });
+        jQuery(document).on('click', '.stardust-tabs-header__tab', function (e) {
+            e.preventDefault();
+            var target = jQuery(this).attr('data-target');
+            jQuery(this).parent('.stardust-tabs-header').find('.stardust-tabs-header__tab').removeClass('stardust-tabs-header__tab--active')
+            jQuery(this).addClass('stardust-tabs-header__tab--active')
+            jQuery(target).parent('.stardust-tabs-contents').find('.stardust-tabs-content-item').removeClass('stardust-tabs-content-item--active')
+            jQuery(target).addClass('stardust-tabs-content-item--active');
+
+        });
+        jQuery(document).on('click', '.account-noti-item-dropdown-btn', function (e) {
+            e.preventDefault();
+            jQuery(this).parents('.account-noti-item').find('.account-noti-item-body').slideToggle()
+            jQuery(this).toggleClass('account-noti-item-dropdown-btn--active')
         });
 
 
