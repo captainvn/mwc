@@ -22,20 +22,20 @@ function checkBox() {
 
     jQuery(document).on('change', '.stardust-checkbox__input', function (e) {
         e.preventDefault();
-        if(jQuery(this).is(':checked')){
+        if (jQuery(this).is(':checked')) {
             jQuery(this).closest('.stardust-checkbox').addClass('stardust-checkbox--checked');
-        }else{
+        } else {
             jQuery(this).closest('.stardust-checkbox').removeClass('stardust-checkbox--checked');
         }
     });
     jQuery(document).on('change', '.cart-list-header .cart-list-header-check-all .stardust-checkbox__input, .cart-final--bottom-checkbox .stardust-checkbox__input', function (e) {
         e.preventDefault();
-        if(jQuery(this).is(':checked')){
+        if (jQuery(this).is(':checked')) {
             shopCheckbox.addClass('stardust-checkbox--checked');
             productCheckbox.addClass('stardust-checkbox--checked');
             headerCheckbox.addClass('stardust-checkbox--checked');
             footerCheckbox.addClass('stardust-checkbox--checked');
-        }else{
+        } else {
             shopCheckbox.removeClass('stardust-checkbox--checked');
             productCheckbox.removeClass('stardust-checkbox--checked');
             headerCheckbox.removeClass('stardust-checkbox--checked');
@@ -46,9 +46,9 @@ function checkBox() {
     jQuery(document).on('change', '.cart-list .cart-item-outer .cart-item-header-checkbox .stardust-checkbox__input', function (e) {
         e.preventDefault();
         var thisShopCheckbox = jQuery(this).parents('.cart-item-outer').find('.cart-item-body .cart-item-body-item-checkbox .stardust-checkbox');
-        if(jQuery(this).is(':checked')){
+        if (jQuery(this).is(':checked')) {
             thisShopCheckbox.addClass('stardust-checkbox--checked');
-        }else{
+        } else {
             thisShopCheckbox.removeClass('stardust-checkbox--checked');
         }
     });
@@ -178,11 +178,11 @@ let Main = {
             e.preventDefault();
             var input = jQuery(this).parent().find('.cart-item--quantity-actions--input');
             var value = Number(input.val());
-            if(jQuery(this).hasClass('cart-item--quantity-actions--item-minus')){
+            if (jQuery(this).hasClass('cart-item--quantity-actions--item-minus')) {
                 value = value < 2 ? 1 : value - 1;
                 input.val(value);
             }
-            if(jQuery(this).hasClass('cart-item--quantity-actions--item-plus')){
+            if (jQuery(this).hasClass('cart-item--quantity-actions--item-plus')) {
                 value = value + 1;
                 input.val(value);
             }
@@ -259,3 +259,23 @@ jQuery(window).resize(function () {
     jQuery(document).find(".js-hamburger").removeClass('is-active');
     checkFooterLocal()
 });
+
+//window on scroll
+jQuery(window).scroll(function () {
+    // =========== STICKY MENU ==========
+    var posScroll = jQuery(window).scrollTop();
+    if ($(window).width() > 992) {
+        if (parseInt(posScroll) > 98) {
+
+            jQuery("body").addClass("header-is-sticky");
+
+
+
+        } else {
+            jQuery("body").removeClass("header-is-sticky");
+        }
+    } else {
+
+    }
+
+})
