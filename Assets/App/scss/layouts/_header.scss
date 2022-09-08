@@ -62,11 +62,59 @@
 							transition: all 0.25s;
 							&:hover,
 							&:focus {
-								opacity: 0.8;
+								opacity: 0.9;
 							}
+                            .mwc-icon-angle-down,
+                            .mwc-icon-angle-right{
+                                @include maxWidth(992px){
+                                    font-size: 9px;
+                                    width: 24px;
+                                    height: 24px;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                    -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                            align-items: center;
+                                    -webkit-box-pack: center;
+                                        -ms-flex-pack: center;
+                                            justify-content: center;
+                                    border: 1px solid $gray-4;
+                                    &::before{
+                                        content: "\e92f";
+                                    }
+                                }
+                            }
+                            &.is-active{
+                                .mwc-icon-angle-down,
+                                .mwc-icon-angle-right{
+                                    @include maxWidth(992px){
+                                        font-size: 9px;
+                                        &::before{
+                                            content: "\e92e";
+                                        }
+                                    }
+                                }
+                            }
 						}
 					}
 				}
+                ul {
+					& > li {
+                        ul {
+                            & > li {
+                                & > a {
+                                    background-color: #fff;
+                                    &:hover,
+                                    &:focus {
+                                        color: #f2611c;
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 				& > ul {
 					display: -webkit-box;
 					display: -ms-flexbox;
@@ -74,6 +122,7 @@
 					-webkit-box-align: center;
 					-ms-flex-align: center;
 					align-items: center;
+                    z-index: 2;
 					@include maxWidth(992px) {
 						position: absolute;
 						top: 44px;
@@ -115,6 +164,7 @@
 							line-height: 30px;
 							display: block;
 							text-transform: uppercase;
+                            white-space: nowrap;
 							@include maxWidth(992px) {
 								color: $primary-text;
 								padding: 0 12px;
@@ -152,6 +202,7 @@
 							-webkit-box-direction: normal;
 							-ms-flex-direction: column;
 							flex-direction: column;
+                            z-index: 3;
 							@include maxWidth(992px) {
 								-webkit-box-shadow: none;
 								box-shadow: none;
@@ -198,17 +249,6 @@
 										justify-content: space-between;
 										background-color: $gray-2;
 									}
-									&.toggle-menu-sub {
-										@include maxWidth(992px) {
-											i {
-												-webkit-transform: rotate(
-													90deg
-												);
-												-ms-transform: rotate(90deg);
-												transform: rotate(90deg);
-											}
-										}
-									}
 								}
 								&:hover {
 									& > ul {
@@ -233,6 +273,7 @@
 									-webkit-box-direction: normal;
 									-ms-flex-direction: column;
 									flex-direction: column;
+                                    z-index: 4;
 									@include maxWidth(992px) {
 										-webkit-box-shadow: none;
 										box-shadow: none;
@@ -247,52 +288,110 @@
 										-o-transition: none;
 										transition: none;
 									}
-									& > li {
-										display: block;
-										position: relative;
-										& > a {
-											display: block;
-											line-height: 30px;
-											padding: 0 12px;
-											background-color: rgba(
-												255,
-												255,
-												255,
-												0.95
-											);
-											color: $gray-13;
-											@include maxWidth(992px) {
-												color: $primary-text;
-												padding: 0 12px 0 36px;
-												line-height: 44px;
-												display: -webkit-box;
-												display: -ms-flexbox;
-												display: flex;
-												-webkit-box-align: center;
-												-ms-flex-align: center;
-												align-items: center;
-												-webkit-box-pack: justify;
-												-ms-flex-pack: justify;
-												justify-content: space-between;
-												background-color: $gray-3;
-											}
-											&.toggle-menu-sub {
-												@include maxWidth(992px) {
-													i {
-														-webkit-transform: rotate(
-															90deg
-														);
-														-ms-transform: rotate(
-															90deg
-														);
-														transform: rotate(
-															90deg
-														);
-													}
-												}
-											}
-										}
-									}
+                                    & > li {
+                                        display: block;
+                                        position: relative;
+                                        & > a {
+                                            display: -webkit-box;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            line-height: 30px;
+                                            padding: 0 12px;
+                                            -webkit-box-align: center;
+                                            -ms-flex-align: center;
+                                            align-items: center;
+                                            -webkit-box-pack: justify;
+                                            -ms-flex-pack: justify;
+                                            justify-content: space-between;
+                                            background-color: rgba(255, 255, 255, 0.95);
+                                            color: $gray-13;
+                                            @include maxWidth(992px) {
+                                                color: $primary-text;
+                                                padding: 0 12px 0 36px;
+                                                line-height: 44px;
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center;
+                                                -webkit-box-pack: justify;
+                                                -ms-flex-pack: justify;
+                                                justify-content: space-between;
+                                                background-color: $gray-3;
+                                            }
+                                        }
+                                        &:hover {
+                                            & > ul {
+                                                opacity: 1;
+                                                visibility: visible;
+                                            }
+                                        }
+                                        & > ul {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 100%;
+                                            width: 175px;
+                                            opacity: 0;
+                                            visibility: hidden;
+                                            -webkit-transition: all 0.25s;
+                                            -o-transition: all 0.25s;
+                                            transition: all 0.25s;
+                                            -webkit-box-shadow: 0px 4px 8px
+                                                rgba(0, 0, 0, 0.25);
+                                            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+                                            -webkit-box-orient: vertical;
+                                            -webkit-box-direction: normal;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            z-index: 5;
+                                            @include maxWidth(992px) {
+                                                -webkit-box-shadow: none;
+                                                box-shadow: none;
+                                                opacity: 1;
+                                                width: 100%;
+                                                left: 0;
+                                                top: auto;
+                                                position: relative;
+                                                visibility: visible;
+                                                display: none;
+                                                -webkit-transition: none;
+                                                -o-transition: none;
+                                                transition: none;
+                                            }
+                                            & > li {
+                                                display: block;
+                                                position: relative;
+                                                & > a {
+                                                    display: block;
+                                                    line-height: 30px;
+                                                    padding: 0 12px;
+                                                    background-color: rgba(
+                                                        255,
+                                                        255,
+                                                        255,
+                                                        0.95
+                                                    );
+                                                    color: $gray-13;
+                                                    @include maxWidth(992px) {
+                                                        color: $primary-text;
+                                                        padding: 0 12px 0 48px;
+                                                        line-height: 44px;
+                                                        display: -webkit-box;
+                                                        display: -ms-flexbox;
+                                                        display: flex;
+                                                        -webkit-box-align: center;
+                                                        -ms-flex-align: center;
+                                                        align-items: center;
+                                                        -webkit-box-pack: justify;
+                                                        -ms-flex-pack: justify;
+                                                        justify-content: space-between;
+                                                        background-color: $gray-4;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
 								}
 							}
 						}
@@ -429,9 +528,12 @@
 			-webkit-box-align: center;
 			-ms-flex-align: center;
 			align-items: center;
-			-webkit-box-pack: end;
-			-ms-flex-pack: end;
-			justify-content: flex-end;
+
+			-webkit-box-pack: center;
+
+			    -ms-flex-pack: center;
+
+			        justify-content: center;
 			.header-center-area {
 				max-width: 782px;
 				width: 100%;
@@ -552,9 +654,9 @@
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
-			-webkit-box-pack: end;
-			-ms-flex-pack: end;
-			justify-content: flex-end;
+			-webkit-box-pack: center;
+			    -ms-flex-pack: center;
+			        justify-content: center;
 			.header-cat-grid {
 				max-width: 782px;
 				width: 100%;
@@ -572,11 +674,13 @@
                         -o-transition: all 0.25s;
                         transition: all 0.25s;
                         position: relative;
+                        -webkit-box-flex: 1;
+                            -ms-flex: 1;
+                                flex: 1;
+                        min-width: 1px;
                         .header-cat-grid-thumb {
                             margin-bottom: 10px;
-                            @include maxWidth(360px){
-                                display: none;
-                            }
+
                             img {
                                 margin: 0 auto;
                                 display: block;
@@ -595,8 +699,16 @@
                             text-transform: uppercase;
                             margin-bottom: 0;
                             text-align: center;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            -o-text-overflow: ellipsis;
+                               text-overflow: ellipsis;
+                            display: block;
                             @include maxWidth(768px){
                                font-size: 10px;
+                            }
+                            @include maxWidth(360px){
+                                display: none;
                             }
                         }
                         &:hover,
@@ -614,6 +726,10 @@
                     -webkit-box-pack: center;
                         -ms-flex-pack: center;
                             justify-content: center;
+                            -webkit-box-flex: 1;
+                                -ms-flex: 1;
+                                    flex: 1;
+                            min-width: 1px;
                     &:not(:first-child) {
                         & > a{
                             padding-left: 20px;
@@ -680,6 +796,18 @@
     .cat-grid-menu{
         position: relative;
 
+        ul{
+            opacity: 1;
+            li{
+                a{
+                    opacity: 1;
+                    background-color: #fff !important;
+                    &:hover{
+                        color: #f2611c;
+                    }
+                }
+            }
+        }
         &:hover {
             & > ul {
                 opacity: 1;
@@ -702,6 +830,7 @@
             -webkit-box-direction: normal;
             -ms-flex-direction: column;
             flex-direction: column;
+            z-index: 2;
             @include maxWidth(992px) {
                 -webkit-box-shadow: none;
                 box-shadow: none;
@@ -748,17 +877,6 @@
                         justify-content: space-between;
                         background-color: $gray-2;
                     }
-                    &.toggle-menu-sub {
-                        @include maxWidth(992px) {
-                            i {
-                                -webkit-transform: rotate(
-                                    90deg
-                                );
-                                -ms-transform: rotate(90deg);
-                                transform: rotate(90deg);
-                            }
-                        }
-                    }
                 }
                 &:hover {
                     & > ul {
@@ -783,6 +901,7 @@
                     -webkit-box-direction: normal;
                     -ms-flex-direction: column;
                     flex-direction: column;
+                    z-index: 3;
                     @include maxWidth(992px) {
                         -webkit-box-shadow: none;
                         box-shadow: none;
@@ -801,15 +920,18 @@
                         display: block;
                         position: relative;
                         & > a {
-                            display: block;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
                             line-height: 30px;
                             padding: 0 12px;
-                            background-color: rgba(
-                                255,
-                                255,
-                                255,
-                                0.95
-                            );
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                            -webkit-box-pack: justify;
+                            -ms-flex-pack: justify;
+                            justify-content: space-between;
+                            background-color: rgba(255, 255, 255, 0.95);
                             color: $gray-13;
                             @include maxWidth(992px) {
                                 color: $primary-text;
@@ -826,18 +948,73 @@
                                 justify-content: space-between;
                                 background-color: $gray-3;
                             }
-                            &.toggle-menu-sub {
-                                @include maxWidth(992px) {
-                                    i {
-                                        -webkit-transform: rotate(
-                                            90deg
-                                        );
-                                        -ms-transform: rotate(
-                                            90deg
-                                        );
-                                        transform: rotate(
-                                            90deg
-                                        );
+                        }
+                        &:hover {
+                            & > ul {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        & > ul {
+                            position: absolute;
+                            top: 0;
+                            left: 100%;
+                            width: 175px;
+                            opacity: 0;
+                            visibility: hidden;
+                            -webkit-transition: all 0.25s;
+                            -o-transition: all 0.25s;
+                            transition: all 0.25s;
+                            -webkit-box-shadow: 0px 4px 8px
+                                rgba(0, 0, 0, 0.25);
+                            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                            z-index: 4;
+                            @include maxWidth(992px) {
+                                -webkit-box-shadow: none;
+                                box-shadow: none;
+                                opacity: 1;
+                                width: 100%;
+                                left: 0;
+                                top: auto;
+                                position: relative;
+                                visibility: visible;
+                                display: none;
+                                -webkit-transition: none;
+                                -o-transition: none;
+                                transition: none;
+                            }
+                            & > li {
+                                display: block;
+                                position: relative;
+                                & > a {
+                                    display: block;
+                                    line-height: 30px;
+                                    padding: 0 12px;
+                                    background-color: rgba(
+                                        255,
+                                        255,
+                                        255,
+                                        0.95
+                                    );
+                                    color: $gray-13;
+                                    @include maxWidth(992px) {
+                                        color: $primary-text;
+                                        padding: 0 12px 0 48px;
+                                        line-height: 44px;
+                                        display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        -webkit-box-pack: justify;
+                                        -ms-flex-pack: justify;
+                                        justify-content: space-between;
+                                        background-color: $gray-4;
                                     }
                                 }
                             }
@@ -860,10 +1037,27 @@ body{
             -o-transition: all .25s;
             transition: all .25s;
         }
-
+        @include maxWidth(992px){
+            height: 220px;
+        }
+        @include maxWidth(767px){
+            height: 174px;
+        }
+        @include maxWidth(360px){
+            height: 160px;
+        }
     }
     #site-content{
         padding-top: 229px;
+        @include maxWidth(992px){
+            padding-top: 220px;
+        }
+        @include maxWidth(767px){
+            padding-top: 174px;
+        }
+        @include maxWidth(360px){
+            padding-top: 160px;
+        }
     }
     &.header-is-sticky{
         header{
@@ -880,5 +1074,10 @@ body{
             }
         }
 
+    }
+}
+.mobile-only{
+    @include minWidth(992px){
+        display: none !important;
     }
 }

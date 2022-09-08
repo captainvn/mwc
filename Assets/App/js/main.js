@@ -134,12 +134,14 @@ let Main = {
             jQuery('.header .menu').toggleClass('is-active');
             jQuery(document).find(".header-bar-menu > ul").slideToggle();
         });
-        jQuery(document).on('click', '.toggle-menu-sub', function (e) {
-            e.preventDefault();
-            if (jQuery(window).width() > 992) {
-                jQuery(this).next("ul").css('display', 'flex');
-            } else {
-                jQuery(this).next("ul").slideToggle();
+        jQuery(document).on('click', '.toggle-menu-sub > i', function (e) {
+
+
+            if (jQuery(window).width() < 992) {
+
+                e.preventDefault();
+                jQuery(this).parent().toggleClass('is-active');
+                jQuery(this).parent().next("ul").slideToggle();
             }
         });
         jQuery(document).on('click', '.footer-title-toggle', function (e) {
@@ -251,6 +253,7 @@ jQuery(document).ready(function () {
     checkBox();
 });
 jQuery(window).resize(function () {
+    jQuery(document).find(".header-bar-menu").find('.toggle-menu-sub').removeClass('is-active');
     if (jQuery(window).width() > 992) {
         jQuery(document).find(".header-bar-menu").find('ul').css('display', 'flex');
     } else {
