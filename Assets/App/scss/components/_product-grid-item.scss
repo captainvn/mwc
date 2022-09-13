@@ -159,6 +159,16 @@
                object-position: center;
         }
     }
+    &.product-grid-thumb-tag {
+        padding-bottom: 0 !important;
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100% !important;
+        z-index: 3;
+        pointer-events: none;
+    }
 }
 .product-sale-progress{
 

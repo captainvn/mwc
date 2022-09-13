@@ -15,6 +15,9 @@
     <link href="Assets/Lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="Assets/Lib/OwlCarousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" />
     <link href="Assets/Lib/OwlCarousel/assets/owl.theme.default.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Lib/slick-1.8.1/slick/slick.css" rel="stylesheet" type="text/css" />
+    <link href="Assets/Lib/slick-1.8.1/slick/slick-theme.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" rel="stylesheet" type="text/css" />
     <link href="Assets/App/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -116,22 +119,140 @@
                             <div class="section-padding">
                                 <div class="product-detail-top mb-32px">
                                     <div class="product-detail-thumb">
-                                        <div class="product-grid-thumb">
-                                            <div class="product-grid-sale-tag">
-                                                <div class="product-grid-sale-tag-inner">
-                                                    <p class="product-grid-sale-tag-text">
-                                                        99.9%
-                                                    </p>
-                                                    <p class="product-grid-sale-tag-title">
-                                                        Giảm
-                                                    </p>
+
+                                        <div class="product-detail-thumb-outer">
+                                            <div class="product-grid-thumb product-grid-thumb-tag">
+                                                <div class="product-grid-sale-tag">
+                                                    <div class="product-grid-sale-tag-inner">
+                                                        <p class="product-grid-sale-tag-text">
+                                                            99.9%
+                                                        </p>
+                                                        <p class="product-grid-sale-tag-title">
+                                                            Giảm
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <a href="./5. product-detail.html" class="product-grid-image">
-                                                <img src="./Assets/App/images/products/product-detail-1.jpg"
-                                                    alt="giay-cao-got-1">
-                                            </a>
+                                            <div class="product-detail-thumb-main">
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/balo-1.jpg">
+                                                            <img src="./Assets/App/images/products/balo-1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/balo-2.jpg">
+                                                            <img src="./Assets/App/images/products/balo-2.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/balo-3.jpg">
+                                                            <img src="./Assets/App/images/products/balo-3.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/balo-4.jpg">
+                                                            <img src="./Assets/App/images/products/balo-4.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/giay-the-thao-nam-1.jpg">
+                                                            <img src="./Assets/App/images/products/giay-the-thao-nam-1.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/giay-the-thao-nam-2.jpg">
+                                                            <img src="./Assets/App/images/products/giay-the-thao-nam-2.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/giay-the-thao-nam-3.jpg">
+                                                            <img src="./Assets/App/images/products/giay-the-thao-nam-3.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="product-detail-thumb-main-item">
+                                                    <div class="product-grid-thumb">
+                                                        <a href="#" class="product-grid-image" data-fancybox="product-detail-thumb-main" data-src="./Assets/App/images/products/giay-the-thao-nam-4.jpg">
+                                                            <img src="./Assets/App/images/products/giay-the-thao-nam-4.jpg" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="product-detail-thumb-nav">
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/balo-1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/balo-2.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/balo-3.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/balo-4.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/giay-the-thao-nam-1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/giay-the-thao-nam-2.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/giay-the-thao-nam-3.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="product-detail-thumb-nav-item">
+                                                <div class="product-grid-thumb">
+                                                    <a href="#" class="product-grid-image" >
+                                                        <img src="./Assets/App/images/products/giay-the-thao-nam-4.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
                                     </div>
                                     <div class="product-detail-main">
                                         <h1 class="product-name">Giày Cao Gót MWC NUCG-3929</h1>
@@ -1506,6 +1627,8 @@
     <script src="./Assets/Lib/jquery-2.2.4.min.js" type="text/javascript"></script>
     <script src="./Assets/Lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="Assets/Lib/OwlCarousel/owl.carousel.js" type="text/javascript"></script>
+    <script src="Assets/Lib/slick-1.8.1/slick/slick.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" type="text/javascript"></script>
     <script src="./Assets/App/js/main.js" type="text/javascript"></script>
 </body>
 
